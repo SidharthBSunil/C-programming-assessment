@@ -10,6 +10,33 @@ Write your code in this editor and press "Run" button to compile and execute it.
 
 #include <stdio.h>
 
+int nlargestnumber(int arr[],int n, int threshold)
+{
+        int largest;
+        while(threshold>0)
+        {   
+            largest=arr[0];
+            for(int i=0;i<=n-1;i++)
+            {
+                if(largest<arr[i])
+                {
+                    largest=arr[i];
+                
+                }
+                
+            }
+            for(int i=0;i<=n-1;i++)
+            {
+                if(largest==arr[i])
+                {
+                    arr[i]=0;
+                }
+            }
+            threshold--;
+        }
+        return largest;
+}
+
 int main()
 {
     int arr[20],n,threshold=3,largest;
@@ -21,44 +48,10 @@ int main()
     {
         scanf("%d",&arr[i]);
     }
-    printf("enter which last number to find ");
+    printf("enter which last larger number to find ");
     scanf("%d",&threshold);
     int threshold_copy=threshold;
-  
-    while(threshold>0)
-    {   largest=arr[0];
-        for(int i=0;i<=n-1;i++)
-        {
-            if(largest<arr[i])
-            {
-                largest=arr[i];
-                
-            }
-       
-        }
-        for(int i=0;i<=n-1;i++)
-        {
-            if(largest==arr[i])
-            {
-                arr[i]=0;
-            }
-
-        }
-        threshold--;
-    }
-    /*
-    largest=arr[0];
-
-    for(int i=0;i<=n-1;i++)
-    {
-        if(largest<arr[i])
-        {
-            largest=arr[i];
-            temp=i;
-        }
-       
-    }*/
-    
-    printf("%d nd largest number in the array is %d\n",threshold_copy,largest);
+    int result=nlargestnumber(arr,n,threshold);
+    printf("%d nd largest number in the array is %d\n",threshold_copy,result);
     
 }
