@@ -13,7 +13,7 @@ Write your code in this editor and press "Run" button to compile and execute it.
 int main()
 {
     int arr[20],n,secondlast=2,temp;
-    printf("enter the numbers of array");
+    printf("enter the numbers of elements");
     scanf("%d",&n);
     printf("pls enter the numbers");
     for(int i=0;i<=n-1;i++)
@@ -22,9 +22,8 @@ int main()
     }
     
     
-    int largest=arr[0];
-    while(secondlast < 0)
-    {
+   int largest=arr[0];
+
     for(int i=0;i<=n-1;i++)
     {
         if(largest<arr[i])
@@ -34,9 +33,26 @@ int main()
         }
        
     }
-    arr[temp]=0;
-    secondlast--;
+    for(int i=0;i<=n-1;i++)
+    {
+        if(largest==arr[i])
+        {
+            arr[i]=0;
+        }
+       
     }
+    largest=arr[0];
+
+    for(int i=0;i<=n-1;i++)
+    {
+        if(largest<arr[i])
+        {
+            largest=arr[i];
+            temp=i;
+        }
+       
+    }
+    
     printf("second largest number is %d\n",largest);
     
 }
