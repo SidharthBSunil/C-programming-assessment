@@ -12,35 +12,41 @@ Write your code in this editor and press "Run" button to compile and execute it.
 
 int main()
 {
-    int arr[20],n,secondlast=2,temp;
+    int arr[20],n,threshold=3,largest;
     printf("enter the numbers of elements");
     scanf("%d",&n);
     printf("pls enter the numbers");
+    
     for(int i=0;i<=n-1;i++)
     {
         scanf("%d",&arr[i]);
     }
-    
-    
-   int largest=arr[0];
+    printf("enter which last number to find ");
+    scanf("%d",&threshold);
+    int threshold_copy=threshold;
+  
+    while(threshold>0)
+    {   largest=arr[0];
+        for(int i=0;i<=n-1;i++)
+        {
+            if(largest<arr[i])
+            {
+                largest=arr[i];
+                
+            }
+       
+        }
+        for(int i=0;i<=n-1;i++)
+        {
+            if(largest==arr[i])
+            {
+                arr[i]=0;
+            }
 
-    for(int i=0;i<=n-1;i++)
-    {
-        if(largest<arr[i])
-        {
-            largest=arr[i];
-            temp=i;
         }
-       
+        threshold--;
     }
-    for(int i=0;i<=n-1;i++)
-    {
-        if(largest==arr[i])
-        {
-            arr[i]=0;
-        }
-       
-    }
+    /*
     largest=arr[0];
 
     for(int i=0;i<=n-1;i++)
@@ -51,8 +57,8 @@ int main()
             temp=i;
         }
        
-    }
+    }*/
     
-    printf("second largest number is %d\n",largest);
+    printf("%d nd largest number in the array is %d\n",threshold_copy,largest);
     
 }
