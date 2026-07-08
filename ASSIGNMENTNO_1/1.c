@@ -9,7 +9,7 @@ Write your code in this editor and press "Run" button to compile and execute it.
 
 
 #include <stdio.h>
-
+#include<stdlib.h>
 int nlargestnumber(int arr[],int n, int threshold)
 {
         int largest;
@@ -39,19 +39,18 @@ int nlargestnumber(int arr[],int n, int threshold)
 
 int main()
 {
-    int arr[20],n,threshold=3,largest;
+    int n,threshold=2,largest,*ptr;
+    ptr=(int *)malloc(sizeof(int));
     printf("enter the numbers of elements");
     scanf("%d",&n);
     printf("pls enter the numbers");
     
     for(int i=0;i<=n-1;i++)
     {
-        scanf("%d",&arr[i]);
+        scanf("%d",&ptr[i]);
     }
-    printf("enter which last largest number to find ");
-    scanf("%d",&threshold);
     int threshold_copy=threshold;
-    int result=nlargestnumber(arr,n,threshold);
+    int result=nlargestnumber(ptr,n,threshold);
     printf("%d nd largest number in the array is %d\n",threshold_copy,result);
     
 }
