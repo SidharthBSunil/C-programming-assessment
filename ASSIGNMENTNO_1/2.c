@@ -12,30 +12,17 @@ Write your code in this editor and press "Run" button to compile and execute it.
 
 int main()
 {
-    int arr[20],n,secondlast=1;
-    printf("enter the numbers of array");
-    scanf("%d",&n);
-    printf("pls enter the numbers");
-    for(int i=0;i<=n-1;i++)
-    {
-        scanf("%d",&arr[i]);
-    }
-    
-    
-    int largest=arr[1];
-    while(secondlast!=0)
-    {
-    for(int i;i<=n-1;i++)
-    {
-        if(largest<arr[i])
-        {
-            largest=arr[i];
-        }
-       
-    }
-    largest=0;
-    secondlast--;
-    }
-    printf("second largest number is %d",largest);
-    
+    unsigned int registerpart1;
+    printf("enter the number \n");
+    scanf("%d",&registerpart1);
+    registerpart1 ^=1;
+    printf("after toggling in first bit is %u\n",registerpart1);
+    registerpart1|=(1<<2);
+    printf("after setting third bit %u\n",registerpart1);
+    registerpart1&=~(1<<5);
+    printf("after clearing sixth bit %u\n",registerpart1);
+
+
 }
+  
+    
