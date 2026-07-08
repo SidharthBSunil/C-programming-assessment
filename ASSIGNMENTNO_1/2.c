@@ -24,7 +24,7 @@ int main()
     registerpart1&=~(1<<5);
     printf("after clearing sixth bit %u\n",registerpart1);
     //doing operation in one line
-    printf("  ");
+    printf("  \n");
     duplicateregister=(((duplicateregister^(1<<0))|(1<<2))&~(1<<5));
      printf("after doing operation in one line %u\n",duplicateregister);
 
