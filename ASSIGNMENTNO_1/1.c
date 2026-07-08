@@ -43,6 +43,7 @@ int main()
     //ptr=(int *)malloc(sizeof(int));
     printf("enter the numbers of elements");
     scanf("%d",&n);
+    
      ptr=(int *)malloc(n*sizeof(int));
     printf("pls enter the numbers");
     
