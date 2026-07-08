@@ -48,7 +48,7 @@ int main()
     {
         scanf("%d",&arr[i]);
     }
-    printf("enter which last larger number to find ");
+    printf("enter which last largest number to find ");
     scanf("%d",&threshold);
     int threshold_copy=threshold;
     int result=nlargestnumber(arr,n,threshold);
